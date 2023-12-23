@@ -1,0 +1,137 @@
+/* ProductDetails.css */
+
+.product-details-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+  margin-right: 20px;
+}
+
+.product-image {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.product-info {
+  margin-top: 10px;
+}
+
+.product-name {
+  font-size: 1.5em;
+  margin-bottom: 5px;
+}
+
+.product-price {
+  font-size: 1.2em;
+  color: #27ae60;
+}
+
+.product-description {
+  margin-top: 10px;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.quantity-controls label {
+  margin-right: 10px;
+}
+
+.quantity-controls input {
+  width: 50px;
+  padding: 5px;
+  text-align: center;
+}
+
+.add-to-cart-button {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.cart-link {
+  color: #3498db;
+  text-decoration: none;
+  margin-top: 10px;
+  font-size: 1.2em;
+}
+
+/* CartDetails.css */
+
+.cart-container {
+  flex: 1;
+  width: 100%;
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 3, 14, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  color: #fff;
+}
+
+.cart-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.remove-icon {
+  cursor: pointer;
+}
+
+.total-amount {
+  margin-top: 10px;
+  font-size: 1.2em;
+}
+
+.checkout-section {
+  margin-top: 20px;
+}
+
+.checkout-section h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.checkout-section form {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkout-section label {
+  margin-bottom: 10px;
+}
+
+.checkout-section input,
+.checkout-section textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+.checkout-btn {
+  background-color: #27ae60;
+  color: #fff;
+  font-size: 1.2em;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
