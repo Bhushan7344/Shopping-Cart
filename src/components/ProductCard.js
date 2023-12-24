@@ -12,7 +12,7 @@ const ProductCard = ({ product }) => {
 
   return (
     <div className="product-card">
-      <img src={product.image} alt={product.name} className="product-image" />
+      <img src={require(`../assets/${product.id}.jpg`)} alt={product.name} className="product-image" />
       <h3 className="product-name">{product.name}</h3>
       <p className="product-price">${product.price}</p>
 
@@ -21,7 +21,7 @@ const ProductCard = ({ product }) => {
           Add to Cart
         </button>
         <button className="view-details-button">
-          <a href={`/product/${product.id}`}>View Details</a>
+          <a href={`/Shopping-Cart/product/${product.id}`}>View Details</a>
         </button>
       </div>
     </div>

@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Shirt 1",
+    "price": 19.99,
+    "description": "A classic white shirt with a simple and elegant design, perfect for any occasion."
+  },
+  {
+    "id": 2,
+    "name": "Shirt 2",
+    "price": 29.99,
+    "description": "A stylish blue shirt with a modern pattern, adding a touch of sophistication to your wardrobe."
+  },
+  {
+    "id": 3,
+    "name": "Shirt 3",
+    "price": 24.99,
+    "description": "A comfortable and casual striped shirt, ideal for a relaxed day out with friends."
+  },
+  {
+    "id": 4,
+    "name": "Shirt 4",
+    "price": 39.99,
+    "description": "A vibrant red shirt that makes a bold statement, perfect for those who love to stand out."
+  },
+  {
+    "id": 5,
+    "name": "Shirt 5",
+    "price": 22.99,
+    "description": "An elegant black shirt with subtle detailing, suitable for both formal and casual occasions."
+  },
+  {
+    "id": 6,
+    "name": "Shirt 6",
+    "price": 34.99,
+    "description": "A cozy flannel shirt in earthy tones, perfect for staying warm and stylish during the colder months."
+  },
+  {
+    "id": 7,
+    "name": "Shirt 7",
+    "price": 27.99,
+    "description": "A trendy denim shirt that adds a touch of urban flair to your look, versatile for various styles."
+  },
+  {
+    "id": 8,
+    "name": "Shirt 8",
+    "price": 32.99,
+    "description": "A sporty polo shirt in a refreshing color, great for a casual day outdoors or a game of golf."
+  },
+  {
+    "id": 9,
+    "name": "Shirt 9",
+    "price": 26.99,
+    "description": "A playful floral shirt that brings a lively and cheerful vibe to your wardrobe, perfect for summer."
+  },
+  {
+    "id": 10,
+    "name": "Shirt 10",
+    "price": 37.99,
+    "description": "A classic checkered shirt with a modern twist, suitable for both work and weekend outings."
+  },
+  {
+    "id": 11,
+    "name": "Shirt 11",
+    "price": 29.99,
+    "description": "A sophisticated linen shirt that keeps you cool and stylish in warm weather, a must-have for summer."
+  },
+  {
+    "id": 12,
+    "name": "Shirt 12",
+    "price": 22.99,
+    "description": "A bold and unique graphic t-shirt that showcases your personality and makes a fashion statement."
+  }
+]

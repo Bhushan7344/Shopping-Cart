@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useCart } from './CartContext';
 import './ProductDetails.css';
+import products from '../assets/products.json'; // Import the products JSON file
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -14,21 +15,16 @@ const ProductDetails = () => {
   const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
-    const fetchProductDetails = async () => {
-      try {
-        const response = await fetch('/products.json');
-        const data = await response.json();
-        const selectedProduct = data.find((item) => item.id === parseInt(id, 10));
-        setProduct(selectedProduct);
-      } catch (error) {
-        setError('Error fetching product details');
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchProductDetails();
+    const selectedProduct = products.find((item) => item.id === parseInt(id, 10));
+    if (selectedProduct) {
+      setProduct(selectedProduct);
+      setLoading(false);
+    } else {
+      setError('Product not found');
+      setLoading(false);
+    }
   }, [id]);
+  
 
   const handleAddToCart = () => {
     addToCart({
@@ -52,20 +48,11 @@ const ProductDetails = () => {
     <div>
       <h1>Product Details</h1>
       <div className="product-details">
-        <img src={product.image} alt={product.name} className="product-image" />
+        <img src={require(`../assets/${product.id}.jpg`)} alt={product.name} className="product-image" />
         <div className="product-info">
           <h2 className="product-name">{product.name}</h2>
           <p className="product-price">${product.price}</p>
           <p className="product-description">{product.description}</p>
-          <div className="quantity-controls">
-            <label>Quantity:</label>
-            <input
-              type="number"
-              value={quantity}
-              onChange={(e) => setQuantity(e.target.value)}
-              min="1"
-            />
-          </div>
           <button className="add-to-cart-button" onClick={handleAddToCart}>
             Add to Cart
           </button>

@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useCart } from './CartContext';
 import './CartDetails.css';
 
+
 const CartDetails = () => {
   const { cartState, removeFromCart, increaseQuantity, decreaseQuantity } = useCart();
   const [shippingDetails, setShippingDetails] = useState({
@@ -22,31 +23,30 @@ const CartDetails = () => {
 
   return (
     <div className="cart-container">
-  <h2>Shopping Cart</h2>
-  {cartState.items.length === 0 ? (
-    <p>Your cart is empty.</p>
-  ) : (
-    <div>
-      {cartState.items.map((item, index) => (
-        <div className="cart-item" key={item.id}>
-          <div className="product-details">
-            <img src={item.image} alt={item.name} className="product-image" />
-            <div className="product-info">
-              <p>{item.name}</p>
-              <p>Price: ${item.price}</p>
+      <h2>Shopping Cart</h2>
+      {cartState.items.length === 0 ? (
+        <p>Your cart is empty.</p>
+      ) : (
+        <div>
+          {cartState.items.map((item, index) => (
+            <div className="cart-item" key={item.id}>
+              <div className="product-details">
+                <img src={require(`../assets/${item.id}.jpg`)} alt={item.name} className="product-image" />
+                <div className="product-info">
+                  <p>{item.name}</p>
+                  <p>Price: ${item.price}</p>
+                </div>
+              </div>
+              <div className="quantity-controls">
+                <button onClick={() => decreaseQuantity(item)}>-</button>
+                <span>{item.quantity || 1}</span>
+                <button onClick={() => increaseQuantity(item)}>+</button>
+              </div>
+              <button onClick={() => removeFromCart(item)} className="remove-icon">
+                Remove
+              </button>
             </div>
-          </div>
-          <div className="quantity-controls">
-            <button onClick={() => decreaseQuantity(item)}>-</button>
-            <span>{item.quantity}</span>
-            <button onClick={() => increaseQuantity(item)}>+</button>
-          </div>
-          <button onClick={() => removeFromCart(item)} className="remove-icon">
-            {/* Add your remove icon here */}
-            Remove
-          </button>
-        </div>
-      ))}
+          ))}
           <p className="total-amount">Total Amount: ${calculateTotal()}</p>
 
           {/* Checkout Section */}

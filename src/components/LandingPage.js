@@ -1,10 +1,12 @@
 // LandingPage.js
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import ProductCard from './ProductCard';
 import './LandingPage.css';
 import { useCart } from './CartContext';
 import { FiShoppingCart } from 'react-icons/fi'; 
+import productData from '../assets/products.json';
+import './LandingPage.css';
 
 const LandingPage = () => {
   const { addToCart, cartState } = useCart();
@@ -12,22 +14,6 @@ const LandingPage = () => {
   const handleAddToCart = (product) => {
     addToCart(product);
   };
-
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const response = await fetch('/products.json');
-        const data = await response.json();
-        setProducts(data);
-      } catch (error) {
-        console.error('Error fetching product data:', error);
-      }
-    };
-
-    fetchProducts();
-  }, []);
 
   return (
     <div>
@@ -40,16 +26,10 @@ const LandingPage = () => {
 
       <h1>Shopping Cart App</h1>
 
-      <div>
-        <h2>Products</h2>
-        <div className="product-list">
-          {products.map((product) => (
-            <div key={product.id}>
-              <ProductCard product={product} />
-              
-            </div>
-          ))}
-        </div>
+      <div className="product-list">
+        {productData.map((product) => (
+          <ProductCard key={product.id} product={product}  />
+        ))}
       </div>
     </div>
   );
