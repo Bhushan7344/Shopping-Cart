@@ -1,6 +1,8 @@
 import React from 'react';
 import './ProductCard.css';
 import { useCart } from './CartContext';
+import { Link } from 'react-router-dom';
+
 
 const ProductCard = ({ product }) => {
   const { addToCart } = useCart();
@@ -21,7 +23,7 @@ const ProductCard = ({ product }) => {
           Add to Cart
         </button>
         <button className="view-details-button">
-          <a href={`/Shopping-Cart/product/${product.id}`}>View Details</a>
+        <Link to={`/product/${product.id}`}>View Details</Link>
         </button>
       </div>
     </div>
